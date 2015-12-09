@@ -1,11 +1,11 @@
 # percolation_tester
-Finds percolation probabilities for nxn sized grids with a p% site vacancy.
+Finds percolation probabilities for nxn sized grids with a p% site vacancy probability.
 
 Vivian Shen 
 
 2 files: percolation and perc_tester.
 
-Percolation contains functions read_grid, write_grid, make_sites, and percolates are the same as last week. The new functions are flow_from, undirected_flow, show_perc, and make_plot.
+Percolation contains functions read_grid, write_grid, make_sites, and percolates, which read a grid from a file, write a grid to a file, create a new nxn grid with p% site vacancy probability, and check if it percolates, respectively. The important functions are flow_from, undirected_flow, show_perc, and make_plot.
 
     flow_from takes in two arrays, one of the vacancy sites (sites) and another of zeroes (full) (initiated in undirected_flow). 
       It also takes in indices i and j. 
@@ -45,4 +45,4 @@ Percolation contains functions read_grid, write_grid, make_sites, and percolates
       In the end, it creates a pyplot plot graph with the x axis being the list of vacancy probabilities, 
       the y axis being the percolation probabilities, and the title being Undirected Percolation.
 
-
+perc_tester is a main method that tests all the above functions.

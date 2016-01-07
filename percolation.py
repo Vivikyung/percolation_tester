@@ -10,7 +10,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math as m
 
-def read_grid(infile_name):
+def copy_site_vacancy(in_file):
     """Create a site vacancy matrix from a text file.
 
     infile_name is the name (a string) of the
@@ -35,7 +35,7 @@ def read_grid(infile_name):
 
 
 
-def write_grid(outfile_name,sites):
+def write_site_vacancy(out_file,sites):
     """Write a site vacancy matrix to a file.
 
     filename is a string that is the name of the
@@ -57,7 +57,7 @@ def write_grid(outfile_name,sites):
 
 
 
-def undirected_flow(sites):
+def return_flow(sites):
     """Returns a matrix of vacant/full sites (1=full, 0=vacant)
 
     sites is a numpy array representing a site vacancy matrix. This 
@@ -75,7 +75,7 @@ def undirected_flow(sites):
     return flow #returns flow matrix
     
 
-def flow_from(sites,full,i,j):
+def flow_site(sites,full,i,j):
     """Adjusts the full array for flow from a single site
 
     This method does not return anything. It changes the array full
@@ -100,7 +100,7 @@ def flow_from(sites,full,i,j):
     flow_from(sites, full, i, j-1) #check the site to the left
 
 
-def percolates(flow_matrix):
+def percolation(flow_matrix):
     """Returns a boolean if the flow_matrix exhibits percolation
 
     flow_matrix is a numpy array representing a flow matrix
@@ -116,7 +116,7 @@ def percolates(flow_matrix):
     
     
 
-def make_sites(n,p):
+def create_site_vacancy(n,p):
     """Returns an nxn site vacancy matrix
 
     Generates a numpy array representing an nxn site vacancy 
@@ -139,7 +139,7 @@ def make_sites(n,p):
 
 
 
-def show_perc(sites):
+def visual_perc(sites):
     """Displays a matrix using three colors for vacant, blocked, full
     
     Used to visualize undirected flow on the matrix sites.
@@ -165,7 +165,7 @@ def show_perc(sites):
 
 
 
-def make_plot(n,trials):
+def graph_perc(n,trials):
     """generates and displays a graph of percolation p vs. vacancy p
 
     estimates percolation probability on an nxn grid for directed 
